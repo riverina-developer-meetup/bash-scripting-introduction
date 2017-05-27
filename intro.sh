@@ -30,12 +30,20 @@ done
 
 my_arr=("cat" "dog" "mouse")
 my_arr+=("kiwi")
+
 echo "array length: ${#my_arr[@]}"
-echo "animals in my array: "
 
 for animal in "${my_arr[@]}"; do
-    echo "$animal"
+    case $animal in
+    kiw*)
+        echo "I love the ${animal}!" 
+    ;;
+    *)
+        echo "What is a ${animal}??"
+    ;;
+    esac
 done
+
 
 function hello {
     echo "Hello $1!"
